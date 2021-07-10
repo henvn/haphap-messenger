@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">HapHap Messenger</string>
+    <string name="login_activity_welcome_message">Welcome to HapHap</string>
+    <string name="hint_email_phone_field">Email or phone number</string>
+    <string name="hint_password">Password</string>
+    <string name="button_sign_up">Sign Up</string>
+    <string name="button_log_in">Log In</string>
+    <string name="button_find_account">Find HapHap account or password</string>
+    <string name="none"/>
+</resources>
