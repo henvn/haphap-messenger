@@ -32,7 +32,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         getWindow().setStatusBarColor(Color.TRANSPARENT);
         //[END] Make_transparent_satus_bar
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_splash_screen);
 
         //Animations
         topAnim = AnimationUtils.loadAnimation(this,R.anim.top_animation);

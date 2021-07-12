@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "827991789323",
+    "project_id": "haphap-messenger",
+    "storage_bucket": "haphap-messenger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827991789323:android:db3828793f2f188ca11c0e",
+        "android_client_info": {
+          "package_name": "com.example.haphapmessenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "827991789323-6shkju73lun6l0saok6gc2jphgdn8fkb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsTI5mMkUBfxtqSqtGijZlXE4Vm1JtJwU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "827991789323-6shkju73lun6l0saok6gc2jphgdn8fkb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

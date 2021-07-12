@@ -29,8 +29,8 @@
             android:id="@+id/login_activity_email_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:hintEnabled="false"
-            app:endIconMode="clear_text">
+            app:endIconMode="clear_text"
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -38,9 +38,9 @@
                 android:background="@color/white"
                 android:hint="@string/hint_email_phone_field"
                 android:paddingStart="0dp"
-                android:paddingEnd="0dp"
                 android:paddingTop="8dp"
-                android:textStyle="bold"/>
+                android:paddingEnd="0dp"
+                android:textStyle="bold" />
 
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -50,7 +50,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:hintEnabled="false"
-            app:endIconMode="clear_text">
+            app:endIconMode="clear_text"
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -60,7 +61,8 @@
                 android:paddingStart="0dp"
                 android:paddingEnd="0dp"
                 android:paddingTop="8dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:inputType="textPassword"/>
 
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -69,14 +71,15 @@
             android:id="@+id/login_activity_button_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="17dp"
             android:layout_marginTop="30dp"
-            android:backgroundTint="#EEEEEE"
+            android:backgroundTint="@color/main_theme"
+            android:onClick="signInWithEmailAndPassword"
+            android:padding="17dp"
             android:text="@string/button_log_in"
+            android:textAllCaps="false"
+            android:textColor="#000"
             android:textSize="15sp"
-            android:textStyle="bold"
-            android:textColor="#ABABAB"
-            android:textAllCaps="false"/>
+            android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/login_activity_button_signup"
@@ -87,7 +90,6 @@
             android:backgroundTint="#EEEEEE"
             android:text="@string/button_sign_up"
             android:textSize="15sp"
-            
             android:textColor="#000"
             android:textAllCaps="false"/>
 
