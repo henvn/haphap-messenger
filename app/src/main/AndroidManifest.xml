@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HapHapMessenger"
         tools:ignore="AllowBackup">
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".SignUpActivity"/>
         <activity android:name=".LoginActivity" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>

@@ -7,4 +7,8 @@
     <string name="button_log_in">Log In</string>
     <string name="button_find_account">Find HapHap account or password</string>
     <string name="none" />
+    <string name="name_field">Name</string>
+    <string name="confirm_password_field">Confirm password</string>
+    <string name="sign_up_message">Please fill in the fields below</string>
+    <string name="back_to_login">Start over?</string>
 </resources>

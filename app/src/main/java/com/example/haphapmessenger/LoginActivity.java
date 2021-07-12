@@ -2,6 +2,8 @@ package com.example.haphapmessenger;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -12,7 +14,7 @@ import java.util.Objects;
 public class LoginActivity extends AppCompatActivity {
 
     TextInputLayout emailField, passField;
-    AppCompatButton loginButton;
+    AppCompatButton loginButton,directToSignUp;
     FirebaseAuth mAuth;
 
     @Override
@@ -23,9 +25,14 @@ public class LoginActivity extends AppCompatActivity {
         emailField = findViewById(R.id.login_activity_email_field);
         passField = findViewById(R.id.login_activity_password_field);
         loginButton = findViewById(R.id.login_activity_button_login);
-
+        directToSignUp = findViewById(R.id.login_activity_button_signup);
         mAuth = FirebaseAuth.getInstance();
 
+        directToSignUp.setOnClickListener(v->
+        {
+            Intent intent = new Intent(this,SignUpActivity.class);
+            startActivity(intent);
+        });
     }
 
     private Boolean validateEmail(){
