@@ -132,6 +132,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/main_theme"
+        android:onClick="registerNewUser"
         android:padding="17dp"
         android:text="@string/button_sign_up"
         android:textAllCaps="false"
