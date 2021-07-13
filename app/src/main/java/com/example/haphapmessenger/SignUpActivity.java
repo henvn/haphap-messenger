@@ -1,5 +1,6 @@
 package com.example.haphapmessenger;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
@@ -12,6 +13,8 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Objects;
 
@@ -21,7 +24,8 @@ public class SignUpActivity extends AppCompatActivity {
     TextInputLayout nameField, emailField,passwordField,passConfirmField;
     AppCompatButton start_over;
     FirebaseAuth mAuth;
-
+    FirebaseDatabase db;
+    DatabaseReference dRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +41,7 @@ public class SignUpActivity extends AppCompatActivity {
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
         // [END initialize_auth]
-
+        db = FirebaseDatabase.getInstance();
 
         start_over.setOnClickListener(v->
         {
@@ -126,6 +130,7 @@ public class SignUpActivity extends AppCompatActivity {
                     .addOnCompleteListener(this, task ->
                     {
                         if(task.isSuccessful()){
+                            pushToDatabase();
                             Log.d(TAG, "registerNewUser() sign up success");
                         } else {
                             Log.d(TAG, "registerNewUser() sign up failed");
@@ -146,6 +151,23 @@ public class SignUpActivity extends AppCompatActivity {
             emailField.setError("The email address is already in use by another account.");
             emailField.requestFocus();
         }
+    }
+
+    public void pushToDatabase(){
+        String name = Objects.requireNonNull(nameField.getEditText()).getText().toString();
+        String email = Objects.requireNonNull(emailField.getEditText()).getText().toString();
+        String password = Objects.requireNonNull(passwordField.getEditText()).getText().toString();
+
+        Users user = new Users(name,email,password);
+
+        dRef = db.getReference("Users");
+        dRef.push().setValue(user).addOnCompleteListener(this, task -> {
+            if(task.isSuccessful()){
+                Log.d(TAG,"Push to node success");
+            } else {
+                Log.d(TAG,"Failed to push to node");
+            }
+        });
     }
 
 }
